@@ -1,0 +1,8 @@
+[package]
+name = "cuda-trust"
+version = "0.1.0"
+edition = "2021"
+description = "Trust engine — grows slowly, decays fast, shared across agents via Bayesian reputation"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
