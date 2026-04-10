@@ -2,7 +2,13 @@
 name = "cuda-trust"
 version = "0.1.0"
 edition = "2021"
-description = "Trust engine — grows slowly, decays fast, shared across agents via Bayesian reputation"
+description = "Multi-context trust with Bayesian fusion and decay"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/Lucineer/cuda-trust"
+readme = "README.md"
+keywords = ["ai", "fleet", "agent", "rust"]
+categories = ["science"]
 
 [dependencies]
 serde = { version = "1", features = ["derive"] }
+
