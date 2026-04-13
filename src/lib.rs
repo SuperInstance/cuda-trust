@@ -14,10 +14,25 @@ Mathematical model:
 - Growth: trust += alpha * (1 - trust) * reward  (diminishing returns)
 - Decay: trust *= (1 - beta * time)  (exponential decay)
 - Fusion: Bayesian update when agents share trust information
+
+## I2I Fleet Protocol Integration
+
+The `i2i` module wires the trust engine into the iron-to-iron fleet protocol:
+
+- **Trust-aware message wrapping**: Every I2I message carries a trust attestation
+- **Trust validation middleware**: Messages below trust threshold are rejected or quarantined
+- **Trust-aware routing**: High-trust agents get priority routing
+- **Trust propagation**: Trust changes gossip through the fleet with depth limits
 */
 
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
+
+/// I2I (iron-to-iron) fleet protocol integration.
+///
+/// Trust-aware message wrapping, validation, routing, and propagation
+/// for the FLUX fleet communication protocol.
+pub mod i2i;
 
 /// Trust score with provenance
 #[derive(Clone, Debug, Serialize, Deserialize)]
